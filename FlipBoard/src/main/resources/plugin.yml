@@ -1,0 +1,7 @@
+main: com.spurposting.plugin.App
+name: FlipBoard
+version: 0.1
+commands:
+  flip:
+    description: flip a scoreboard
+    usage: /flip <scoreboardName>
