@@ -9,19 +9,8 @@ import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
 
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.command.BlockCommandSender;
-
-import org.bukkit.entity.Player;
-import org.bukkit.block.CommandBlock;
-
-import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.DisplaySlot;
-import org.bukkit.scoreboard.Score;
-import org.bukkit.scoreboard.Objective;
-import org.bukkit.scoreboard.ScoreboardManager;
+import org.bukkit.command.*;
+import org.bukkit.scoreboard.*;
 
 import org.bukkit.Bukkit;
 
