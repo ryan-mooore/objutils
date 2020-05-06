@@ -7,7 +7,7 @@ public class App extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("Loading Plugin: FLIPBOARD");
-        this.getCommand("flip").setExecutor(new ScoreboardFlip());
+        this.getCommand("sbflip").setExecutor(new ScoreboardFlip());
     }
     @Override
     public void onDisable() {
