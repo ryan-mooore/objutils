@@ -4,4 +4,8 @@ version: 0.1
 commands:
   sbflip:
     description: flip a scoreboard
-    usage: /sbflip <scoreboardName>
+    usage: /sbflip <scoreboard> <newScoreboard>
+  
+  splits:
+    description: list splits of a scoreboard
+    usage: /splits <scoreboard>

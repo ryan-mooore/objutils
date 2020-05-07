@@ -50,7 +50,7 @@ public class ScoreboardFlip implements CommandExecutor {
 
         if (true) {
 
-            sender.sendMessage(String.format("Flipping and displaying scoreboard objective %s", args[0]));
+            sender.sendMessage(String.format("Flipping %s and writing to %s", args[0], args[1]));
 
             ScoreboardManager manager = Bukkit.getScoreboardManager();
             Scoreboard board = manager.getMainScoreboard();
@@ -72,18 +72,29 @@ public class ScoreboardFlip implements CommandExecutor {
             HashMap<String, Integer> timingScoresSorted = sortHashMapByValues(timingScores);
             List<String> scoreList = new ArrayList<String>();
             
-            if (!board.getObjective("resultsSorted").equals(null)) {
-                board.getObjective("resultsSorted").unregister​();
+            Objective newBoard = board.getObjective(args[1]);
+            if (newBoard != null) {
+                for(String entry : entries) {
+                    if (Character.isDigit(entry.trim().charAt(0))) {
+                        Set<Score> scores = board.getScores(entry);
+                        for(Score score : scores) {
+                            if (score.getObjective​().equals(newBoard) && score.getScore() == 0) {
+                                board.resetScores(entry);
+                            }
+                        }
+                    }
+                }
+                board.getObjective(args[1]).unregister​();
             }
             
-            Objective sorted = board.registerNewObjective("resultsSorted", "dummy");
+            Objective sorted = board.registerNewObjective(args[1], "dummy");
             sorted.setDisplayName("Top Times Leaderboard");
             DisplaySlot display = DisplaySlot.SIDEBAR;
             sorted.setDisplaySlot(display);
             
             int longestUser = 0;
             int longestTime = 0;
-            int i = 0;
+
             for(HashMap.Entry<String, Integer> result : timingScoresSorted.entrySet()) {
                 String user = result.getKey();
                 String time = Integer.toString(result.getValue());
@@ -94,13 +105,8 @@ public class ScoreboardFlip implements CommandExecutor {
                 if (time.length() > longestTime) {
                     longestTime = user.length();
                 }
-                if (i == 14) {
-                    break;
-                }
-                i++;
             }
             
-            i = 0;
             for(HashMap.Entry<String, Integer> result : timingScoresSorted.entrySet()) {
                 String user = result.getKey();
                 String time = Integer.toString(result.getValue());
@@ -111,25 +117,19 @@ public class ScoreboardFlip implements CommandExecutor {
                 }
                 
                 Score score = sorted.getScore("");
+                
 
                 if (longestTime - time.length() == 0) {
-                    String entry = time + " " + user + String.format("%" + (padding) + "s", "");
+                    String entry = time + "_" + user;
                     score = sorted.getScore(entry);
                 } else {
                     String entry =
                     String.format("%" + (longestTime - time.length()) + "d", Integer.parseInt(time))
-                    + " " + user
-                    + String.format("%" + (padding) + "s", "");
+                    + "_" + user;
         
                     score = sorted.getScore(entry);
                 }
-                
                 score.setScore(0);
-
-                if (i == 14) {
-                    break;
-                }
-                i++;
             }
         }
         return true;

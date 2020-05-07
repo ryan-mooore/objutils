@@ -1,6 +1,5 @@
 package com.spurposting.plugin;
 
-
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class App extends JavaPlugin {
@@ -8,6 +7,7 @@ public class App extends JavaPlugin {
     public void onEnable() {
         getLogger().info("Loading Plugin: FLIPBOARD");
         this.getCommand("sbflip").setExecutor(new ScoreboardFlip());
+        this.getCommand("splits").setExecutor(new ListSplits());
     }
     @Override
     public void onDisable() {
