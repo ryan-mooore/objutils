@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.spurposting.plugin</groupId>
-  <artifactId>FlipBoard</artifactId>
-  <version>1.6.1</version>
+  <artifactId>ObjectiveUtils</artifactId>
+  <version>0.1.10</version>
 
-  <name>FlipBoard</name>
+  <name>ObjectiveUtils</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 

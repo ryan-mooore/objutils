@@ -1,0 +1,19 @@
+main: com.spurposting.plugin.App
+name: ObjectiveUtils
+version: 0.1.10
+description: Useful utilities for dealing with scoreboard objectives in Minecraft
+api-version: 1.15
+author: Ryan Moore
+commands:
+  flip:
+    description: flip a scoreboard
+    usage: /flip <scoreboard> <newScoreboard>
+    aliases:
+      sbflip
+  
+  obj:
+    description: scoreboard utils
+    usage: /obj <clear|list> <scoreboard>
+    aliases:
+      objective
+    
