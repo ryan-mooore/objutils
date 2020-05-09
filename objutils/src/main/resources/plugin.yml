@@ -4,16 +4,32 @@ version: 0.4.40
 description: Useful utilities for dealing with scoreboard objectives in Minecraft
 api-version: 1.15
 author: Ryan Moore
+
 commands:
   flip:
     description: flip a scoreboard
     usage: /flip <scoreboard> <newScoreboard> [isActiveCheck]
     aliases:
       sbflip
-  
+  flip2:
+    description: flip a scoreboard
+    usage: /flip <scoreboard> <newScoreboard> [isActiveCheck]
+    aliases:
+      sbflip
+
   obj:
     description: scoreboard utils
     usage: /obj <clear|list|copy> <scoreboard> [startIndex] [stopIndex]
     aliases:
       objective
-    
+
+  startclock:
+    description: create a clock
+    usage: /startclock <create|remove|update> <name>
+    aliases:
+
+  beeper:
+    description: create a beeper
+    usage: /beeper tsierantsetnei
+    aliases:
+  

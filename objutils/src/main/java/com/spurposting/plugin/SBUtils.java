@@ -132,6 +132,6 @@ public class SBUtils implements CommandExecutor {
                 "Copied Objective %s to %s",
                 obj.getName(), newObj.getName()));
         }
-        return true;
+    return true;
     }
 }
