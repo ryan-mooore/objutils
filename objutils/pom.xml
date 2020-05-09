@@ -6,7 +6,7 @@
 
   <groupId>com.spurposting.plugin</groupId>
   <artifactId>ObjectiveUtils</artifactId>
-  <version>0.4.80</version>
+  <version>0.5.20</version>
 
   <name>ObjectiveUtils</name>
   <!-- FIXME change it to the project's website -->
@@ -31,7 +31,7 @@
       <version>1.12.2-R0.1-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
-  </dependencies>
+    </dependencies>
 
   <repositories>
     <repository>
