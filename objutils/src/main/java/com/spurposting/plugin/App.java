@@ -10,8 +10,6 @@ public class App extends JavaPlugin {
         getLogger().info("Loading Plugin: FLIPBOARD");
         this.getCommand("flip").setExecutor(new ScoreboardFlip());
         this.getCommand("obj").setExecutor(new SBUtils());
-        this.getCommand("beeper").setExecutor(new Beeper());
-        this.getCommand("startclock").setExecutor(new StartClock());
         
     }
     @Override
