@@ -6,15 +6,8 @@ api-version: 1.15
 author: Ryan Moore
 
 commands:
-  flip:
-    description: flip a scoreboard
-    usage: /flip <scoreboard> <newScoreboard> [isActiveCheck]
-    aliases:
-      sbflip
-
   obj:
     description: scoreboard utils
-    usage: /obj <clear|list|copy> <scoreboard> [startIndex] [stopIndex]
+    usage: /obj <clear|list|copy|flip> <scoreboard> [startIndex] [stopIndex]
     aliases:
       objective
-  
